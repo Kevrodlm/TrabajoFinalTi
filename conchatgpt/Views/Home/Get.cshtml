@@ -1,0 +1,18 @@
+﻿@using System.Data;
+@model DataTable
+@{
+    Layout = null;
+}
+<div class="text-center" >
+    <table class="table">
+        @foreach(DataRow row in Model.Rows)
+        {
+            <tr>
+                @foreach(var field in row.ItemArray)
+                {
+                    <td>@field</td>
+                }
+            </tr>
+        }
+    </table>
+</div>

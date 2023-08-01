@@ -1,0 +1,24 @@
+﻿
+<div class="text-center">
+    <textarea  class="col-12" id="prompt"></textarea>
+    <button onclick="send()">Enviar</button>
+</div>
+
+<div class="text-center" id="result"> </div>
+<script> //para invocar el controlador geet
+    
+
+
+    function send(){
+
+        const url = "Home/Get?prompt=" + document.getElementById("prompt").value;
+
+        fetch(url)//puras promesas aqui
+            .then(data => data.text())
+            .then(text => document.getElementById("result").innerHTML = text);
+    }
+    //tmr on, dos horas buscnado el error y era una minuscula
+
+    
+</script>
+
